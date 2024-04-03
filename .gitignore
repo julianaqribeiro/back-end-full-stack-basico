@@ -1,0 +1,5 @@
+﻿env
+schemas/__pycache__
+model/__pycache__
+__pycache__
+log
