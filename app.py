@@ -46,7 +46,7 @@ def get_categorias_cardapio():
 
 
 @app.post('/item_cardapio', tags=[itens_cardapio_tag],
-          responses={"200": ItemCardapioViewSchema, "409": ErrorSchema, "400": ErrorSchema})
+          responses={"200": ItemCardapioAddSchema, "409": ErrorSchema, "400": ErrorSchema})
 def add_item_cardapio(form: ItemCardapioSchema):
     """
     Adiciona um novo Item do Cardápio à base de dados
@@ -56,7 +56,7 @@ def add_item_cardapio(form: ItemCardapioSchema):
         nome=form.nome,
         descricao=form.descricao,
         preco=form.preco,
-        categoria=form.categoria)
+        categoria_id=form.categoria_id)
     
     logger.debug(f"Adicionando item de nome: '{item.nome}'")
     try:
@@ -64,7 +64,7 @@ def add_item_cardapio(form: ItemCardapioSchema):
         session.add(item)
         session.commit()
         logger.debug(f"Adicionado item de nome: '{item.nome}'")
-        return apresenta_item_cardapio(item), 200
+        return apresenta_novo_item_cardapio(item), 200
 
     except IntegrityError as e:
         error_msg = "Item do Cardápio de mesmo nome já salvo na base :/"

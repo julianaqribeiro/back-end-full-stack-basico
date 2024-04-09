@@ -1,3 +1,3 @@
 from schemas.categoria_cardapio import CategoriaCardapioSchema, ListagemCategoriasCardapioSchema, ListagemCategoriaCardapioComItensSchema, apresenta_categorias_cardapio, apresenta_categorias_cardapio_com_itens
-from schemas.item_cardapio import ItemCardapioSchema, ItemCardapioViewSchema, ItemCardapioBuscaSchema, ItemCardapioDelSchema, ItemCardapioSemCategoriaViewSchema, apresenta_item_cardapio
+from schemas.item_cardapio import ItemCardapioSchema,  ItemCardapioDelSchema, ItemCardapioViewSchema, ItemCardapioBuscaSchema, ItemCardapioAddSchema, apresenta_novo_item_cardapio
 from schemas.error import ErrorSchema

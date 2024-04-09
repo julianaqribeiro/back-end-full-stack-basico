@@ -2,7 +2,7 @@ from typing import List
 from pydantic import BaseModel
 
 from model.categoria_cardapio import CategoriaCardapio
-from schemas.item_cardapio import ItemCardapioSemCategoriaViewSchema
+from schemas.item_cardapio import ItemCardapioViewSchema
 
 
 class CategoriaCardapioSchema(BaseModel):
@@ -19,12 +19,12 @@ class CategoriaCardapioComItensSchema(BaseModel):
     Define a representacao da categoria de cardapio com os itens vinculados 
     """
     nome: str = "Bebida",
-    itens: List[ItemCardapioSemCategoriaViewSchema]
+    itens: List[ItemCardapioViewSchema]
 
 
 class ListagemCategoriaCardapioComItensSchema(BaseModel):
     """ 
-    Define a representacao da categoria de cardapio com os itens vinculados 
+    Define a representacao das categorias de cardapio com os itens vinculados 
     """
     categorias: List[CategoriaCardapioComItensSchema]
 
