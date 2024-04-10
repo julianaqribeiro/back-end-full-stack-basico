@@ -18,7 +18,7 @@ CORS(app)
 # definindo tags
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
 categoria_cardapio_tag = Tag(name="CategoriaCardapio", description="Visualização de categorias do cardápio")
-itens_cardapio_tag = Tag(name="ItensCardapio", description="Adição, visualização e remoção dos itens do cardápio à base")
+itens_cardapio_tag = Tag(name="ItensCardapio", description="Adição e remoção dos itens do cardápio à base")
 cardapio_tag = Tag(name="Cardapio", description="Visualizacao do cardapio")
 
 
@@ -35,7 +35,7 @@ def get_categorias_cardapio():
     """
     logger.debug(f"Coletando categorias ")
     session = Session()
-    categorias = session.query(CategoriaCardapio).all()
+    categorias = session.query(CategoriaCardapio).order_by(CategoriaCardapio.nome.asc()).all()
 
     if not categorias:
         return {"categorias": []}, 200
@@ -109,7 +109,7 @@ def get_cardapio():
     """
     logger.debug(f"Coletando itens ")
     session = Session()
-    categorias = session.query(CategoriaCardapio).all()
+    categorias = session.query(CategoriaCardapio).order_by(CategoriaCardapio.nome.asc()).all()
 
     if not categorias:
         return {"categorias": []}, 200

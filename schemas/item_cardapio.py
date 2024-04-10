@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 from typing import Optional, List
 
 from model.item_cardapio import ItemCardapio
@@ -46,7 +46,7 @@ class ItemCardapioAddSchema(BaseModel):
     nome: str = "Refrigerante"
     descricao: str = "Coca-cola, Guaraná, Fanta e Sprite"
     preco: float = 12.50
-    categoria_id: int = 1        
+    categoria_id: int = 1            
 
 def apresenta_novo_item_cardapio(item: ItemCardapio):
     """ 
@@ -58,4 +58,6 @@ def apresenta_novo_item_cardapio(item: ItemCardapio):
         "descricao": item.descricao,
         "preco": item.preco,
         "categoria_id": item.categoria_id       
-    }    
+    }  
+
+     

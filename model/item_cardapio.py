@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Float, ForeignKey, Numeric, String, Integer
-from sqlalchemy.orm import relationship
 
 from model.base import Base
 
@@ -25,4 +24,4 @@ class ItemCardapio(Base):
         self.nome = nome
         self.descricao = descricao
         self.preco = preco
-        self.categoria_id = categoria_id
+        self.categoria_id = categoria_id            
