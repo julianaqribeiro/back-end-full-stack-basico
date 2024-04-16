@@ -11,7 +11,7 @@ from model.item_cardapio import ItemCardapio
 from schemas import *
 from flask_cors import CORS
 
-info = Info(title="API Full Stack Básico", version="1.0.0")
+info = Info(title="API Módulo Full Stack Básico", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
 

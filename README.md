@@ -3,7 +3,7 @@
 Este pequeno projeto faz parte do MVP especificado na Disciplina **Desenvolvimento Full Stack Básico** do curso de 
 Pós-Graduação em Desenvolvimento Full Stack da PUC-Rio 
 
-O objetivo aqui é implementar a API usando a linguagem Python com Flask 
+O objetivo aqui é implementar a API usando a linguagem Python com Flask. 
 
 ---
 ## Como executar 

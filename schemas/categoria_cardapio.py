@@ -15,29 +15,25 @@ class CategoriaCardapioSchema(BaseModel):
 
 
 class CategoriaCardapioComItensSchema(BaseModel):
-    """ 
-    Define a representacao da categoria de cardapio com os itens vinculados 
+    """ Define a representacao da categoria de cardapio com os itens vinculados 
     """
     nome: str = "Bebida",
     itens: List[ItemCardapioViewSchema]
 
 
 class ListagemCategoriaCardapioComItensSchema(BaseModel):
-    """ 
-    Define a representacao das categorias de cardapio com os itens vinculados 
+    """ Define a representacao das categorias de cardapio com os itens vinculados 
     """
     categorias: List[CategoriaCardapioComItensSchema]
 
 
 class ListagemCategoriasCardapioSchema(BaseModel):
-    """ 
-    Define como uma listagem de categorias de cardapio será retornada.
+    """ Define como uma listagem de categorias de cardapio será retornada.
     """
     categorias:List[CategoriaCardapioSchema]    
 
 def apresenta_categorias_cardapio(categorias: List[CategoriaCardapio]):
-    """ 
-    Retorna uma representação da listagem das categoria de cardapio
+    """ Retorna uma representação da listagem das categoria de cardapio
     """
     result = []
     for categoria in categorias:

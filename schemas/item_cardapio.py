@@ -1,4 +1,4 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
 from typing import Optional, List
 
 from model.item_cardapio import ItemCardapio
@@ -49,8 +49,7 @@ class ItemCardapioAddSchema(BaseModel):
     categoria_id: int = 1            
 
 def apresenta_novo_item_cardapio(item: ItemCardapio):
-    """ 
-    Retorna uma representação do novo item do cardapio
+    """ Retorna uma representação do novo item do cardapio
     """
     return {
         "id": item.id,
