@@ -93,7 +93,7 @@ def del_item_cardapio(query: ItemCardapioBuscaSchema):
         
     if count:
         logger.debug(f"Deletado produto #{str(item_id)}")
-        return {"mesage": "Produto removido", "id": str(item_id)}
+        return {"mesage": "item removido", "id": str(item_id)}
     else:
         error_msg = "Item não encontrado na base :/"
         logger.warning(f"Erro ao deletar o item #'{str(item_id)}', {error_msg}")
